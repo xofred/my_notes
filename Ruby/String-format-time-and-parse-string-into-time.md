@@ -1,3 +1,11 @@
+String to Time:
+
+```ruby
+DateTime.strptime("2016年07月03日03:30", '%Y年%m月%d日%H:%M') # => Sun, 03 Jul 2016 03:30:00 +0000
+```
+
+Reference: [Class: DateTime (Ruby 2.3.0) ](http://ruby-doc.org/stdlib-2.3.0/libdoc/date/rdoc/DateTime.html#M000214)
+
 ```
 strftime([format='%FT%T%:z']) → string
 Formats date according to the directives in the given format
@@ -172,5 +180,3 @@ Various ISO 8601 formats:
   %G-W%V-%uT%R%:z  => 2007-W47-1T08:37-06:00    Week date and local time and difference from UTC (extended)
 See also strftime(3) and strptime.
 ```
-
-Reference: [Class: DateTime (Ruby 2.3.0) ](http://ruby-doc.org/stdlib-2.3.0/libdoc/date/rdoc/DateTime.html#M000214)
