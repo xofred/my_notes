@@ -44,3 +44,9 @@ a |  b
 Client.joins('LEFT OUTER JOIN addresses ON addresses.client_id = clients.id')
 # SELECT clients.* FROM clients LEFT OUTER JOIN addresses ON addresses.client_id = clients.id
 ```
+
+Reference: 
+
+- [Difference between INNER and OUTER joins](http://stackoverflow.com/questions/38549/difference-between-inner-and-outer-joins)
+
+- [Active Record Query Interface — Ruby on Rails Guides](http://guides.rubyonrails.org/active_record_querying.html)
