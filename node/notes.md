@@ -77,5 +77,36 @@ Then inn our code, `require('express');`
 
 `npm install express –g` 
 
+It doesn't mean we can require it from anywhere, it just link it based on package.json:
+
+```json
+"bin": {
+  "express": "./bin/express"
+},
+```
+
+Let's say our Node in `/usr/local/bin/node`, so it will be linked under `/usr/local/lib/node_ modules`
+
+##### local install
+
+We have serval options:
+
+```shell
+npm install <tarball file>
+npm install <tarball url>
+npm install <folder>
+```
+
+##### install from unofficial source
+
+```shell
+npm install underscore --registry=http://registry.url
+```
+
+Or we can use it always:
+
+```shell
+npm config set registry http://registry.url
+```
 ---
 Reference: 《深入浅出Node.js》朴灵
