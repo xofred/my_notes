@@ -65,6 +65,17 @@ A unzipped package should include:
 - **doc/** documents
 - **test/** unit test codes
 
+### NPM frequent usage
+
+#### dependencies install
+
+For example, when run `npm install express`, will create node_modules/ under current directory, then create express/ under node_modules/, then unzip the package in express/
+
+Then inn our code, `require('express');` 
+
+##### 'global install'
+
+`npm install express –g` 
 
 ---
 Reference: 《深入浅出Node.js》朴灵
