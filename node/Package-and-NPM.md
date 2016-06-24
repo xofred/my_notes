@@ -1,5 +1,3 @@
-# 深入浅出Node.js读书笔记
-
 ## CommonJS's  module strategy
 
 Let's say we have a module called 'math.js'
@@ -30,26 +28,22 @@ exports.increment = function (val) {
 
 ## Node's  module strategy
 
-### always load from cache first
+### Priority
 
-### path analyzing and file locating
-
-#### analyzing
+**Always load from cache first, then:**
 
 - core modules, such as 'http'、'fs'、'path' (fastest)
 - relative directories start with '.' or '..' (fast)
 - absolute directories start with '/' (fast)
 - connect modules which are not provided as path (slow)
 
-#### locating
-
-##### extension
+### extension
 
 Since Node wiil try in this follow order: **.js、.json、.node**. 
 
 So if we have module like .node or .json, we should specify it in require()'s path
 
-##### package
+### package
 
 Node will try locating path of **main** property under **package.json**
 
@@ -65,7 +59,7 @@ A unzipped package should include:
 - **doc/** documents
 - **test/** unit test codes
 
-### NPM frequent usage
+### NPM
 
 #### dependencies install
 
