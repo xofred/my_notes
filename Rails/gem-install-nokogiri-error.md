@@ -1,0 +1,3 @@
+```shell
+xcode-select --install
+```
