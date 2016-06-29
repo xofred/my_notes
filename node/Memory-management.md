@@ -160,3 +160,7 @@ or
 - advanced restriction, higher performance: [LRU by Isaac Z. Schlueter](https://github.com/isaacs/node-lru-cache)
 
 Or, a better option could be use cache outside our thread. Such as [Redis](https://github.com/NodeRedis/node_redis) or [Memcached](https://github.com/3rd-Eden/memcached).
+
+### investigate leaking
+
+[node-heapdump](https://www.npmjs.com/package/heapdump) or [node-memwatch](https://www.npmjs.com/package/memwatch) should help us find out.
