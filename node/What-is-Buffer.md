@@ -37,7 +37,7 @@ buf[22] = 3.1415;
 console.log(buf[22]); // 3
 ```
 
-## Buffer type convention
+## Type convention
 
   - ASCII
   - UTF-8
@@ -63,4 +63,62 @@ buf.write(string, [offset], [length], [encoding])
 ```javascript
 // if buf is written by different encoding, it should be converted at exact point by exact encoding
 buf.toString([encoding], [start], [end]) // also [encoding] default is UTF-8
+```
+
+### Unsupported encoding
+```javascript
+Buffer.isEncoding(encoding) // true or false
+``` 
+
+But! We can use third-party library such as: 
+
+[iconv-lite](https://www.npmjs.com/package/iconv-lite)
+```javascript
+var iconv = require('iconv-lite');
+// Buffer to String 
+var str = iconv.decode(buf, 'win1251');
+// String to Buffer
+var buf = iconv.encode("Sample input string", 'win1251');
+```
+
+or [iconv](https://www.npmjs.com/package/iconv)
+```javascript
+var iconv = new Iconv('UTF-8', 'ASCII'); 
+iconv.convert('ça va'); // throws EILSEQ
+
+var iconv = new Iconv('UTF-8', 'ASCII//IGNORE'); 
+iconv.convert('ça va'); // returns "a va"
+
+var iconv = new Iconv('UTF-8', 'ASCII//TRANSLIT'); 
+iconv.convert('ça va'); // "ca va"
+
+var iconv = new Iconv('UTF-8', 'ASCII//TRANSLIT//IGNORE'); 
+iconv.convert('ça va  '); // "ca va "
+```
+
+## Unicode chars in Buffer concat
+```shell
+cat test.md
+床前明月光，疑是地上霜，举头望明月，低头思故乡。
+```
+
+```javascript
+var data, fs, rs;
+
+data = '';
+fs = require('fs');
+rs = fs.createReadStream('test.md');
+
+rs.on("data", function (chunk){
+  data += chunk; 
+});
+
+rs.on("end", function () { 
+  console.log(data);
+});
+```
+
+```shell
+node luanma.js
+床前明月光，疑是地上霜，举头望明月，低头思故乡。
 ```
