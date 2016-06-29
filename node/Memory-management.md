@@ -164,3 +164,29 @@ Or, a better option could be use cache outside our thread. Such as [Redis](https
 ### investigate leaking
 
 [node-heapdump](https://www.npmjs.com/package/heapdump) or [node-memwatch](https://www.npmjs.com/package/memwatch) should help us find out.
+
+## big file
+
+```javascript
+var reader, writer;
+
+reader = fs.createReadStream('in.txt');
+
+writer = fs.createWriteStream('out.txt');
+
+reader.on('data', function(chunk) {
+  writer.write(chunk);
+});
+
+reader.on('end', function() {
+  writer.end();
+});
+```
+
+or
+
+```javascript
+var reader = fs.createReadStream('in.txt'); 
+var writer = fs.createWriteStream('out.txt'); 
+reader.pipe(writer);
+```
