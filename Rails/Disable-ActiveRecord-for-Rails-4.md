@@ -23,3 +23,5 @@ require "rails/test_unit/railtie"
 5. Delete any ActiveRecord configuration from your config/environments files (this is what is causing your error)
 
 This is all you need to do for an empty Rails app. If you run into problems caused by your existing code, stack trace should give you sufficient information on what you need to change. You might for example have some ActiveRecord configuration in your initializers.
+
+Reference: [Disable ActiveRecord for Rails 4](http://stackoverflow.com/questions/19078044/disable-activerecord-for-rails-4)
