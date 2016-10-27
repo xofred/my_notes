@@ -53,8 +53,20 @@ zh-CN:
         goto: "去"
 ```
 
+set locale for certain controller( optional )
+
+```ruby
+before_action :set_locale
+ 
+def set_locale
+  I18n.locale = params[:locale] || I18n.default_locale
+end
+```
+
 Reference: 
 
 [Internationalization and Locales](https://github.com/amatsuda/kaminari/wiki/Internationalization-and-Locales)
 
 [kaminari_themes/semantic_ui/app/views/kaminari/_page.html.erb](https://github.com/amatsuda/kaminari_themes/blob/master/semantic_ui/app/views/kaminari/_page.html.erb)
+
+[Rails Internationalization (I18n) API](http://guides.rubyonrails.org/i18n.html#inflection-rules-for-other-locales)
