@@ -1,14 +1,15 @@
 **Post-install message from capistrano:**
 
-Capistrano 3.1 has some breaking changes. Please check the CHANGELOG: http://goo.gl/SxB0lr
+Capistrano 3.1 has some breaking changes. Please check the [CHANGELOG](http://goo.gl/SxB0lr)
 
-If you're upgrading Capistrano from 2.x, we recommend to read the upgrade guide: http://goo.gl/4536kB
+If you're upgrading Capistrano from 2.x, we recommend to read the [upgrade guide](http://goo.gl/4536kB)
 
 The `deploy:restart` hook for passenger applications is now in a separate gem called capistrano-passenger.  Just add it to your Gemfile and require it in your Capfile.
 
 **Post-install message from capistrano-passenger:**
 
 ==== Release notes for capistrano-passenger ====
+
 passenger once had only one way to restart: `touch tmp/restart.txt`
 Beginning with passenger v4.0.33, a new way was introduced: `passenger-config restart-app`
 
@@ -34,3 +35,33 @@ Gemfile and rely on capistrano-bundler to install it with the rest of your bundl
 If you are installing passenger during your deployment AND you want to restart using `passenger-config restart-app`,
 you need to set `:passenger_in_gemfile` to `true` in your `config/deploy.rb`.
 ================================================
+
+### deploying multiple applications to the same server
+
+```ruby
+# config/deploy.rb or config/deploy/<stage_name>.rb
+#set :deploy_to, '/var/www/my_app_name'
+set :deploy_to, '/var/www/my_app2_name' # choose a different :deploy_to path.
+```
+
+### sensitive config files or things should be persist
+
+```ruby
+set :linked_files, %w{config/database.yml config/settings/alipay.yml config/upyun.yml config/umeng_message.yml
+                      config/danche.yml config/yongle.yml config/viagogo.yml config/mlb_translate.yml
+                      config/certs/rsa_private_key.pem config/certs/app_private_key.pem config/certs/alipay_public_key.pem}
+
+set :linked_dirs, %w{tmp/pids tmp/cache tmp/sockets}
+```
+
+New in Capistrano 3.5: for a variable that holds an Array, easily add values to it using append. This comes in especially handy for `:linked_dirs` and `:linked_files` (see Variables reference below).
+```ruby
+append :linked_dirs, ".bundle", "tmp"
+```
+
+[More Configuration Variables](http://capistranorb.com/documentation/getting-started/configuration/)
+
+[Before Deploy](http://capistranorb.com/documentation/getting-started/preparing-your-application/)
+
+Reference: [Capistrano Offical Site](http://capistranorb.com)
+
