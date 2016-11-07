@@ -1,3 +1,8 @@
+Initialize the spec/ directory (where specs will reside) with:
+```shell
+rails generate rspec:install
+```
+
 You just have to add the following in your spec_helper.rb file
 ```ruby
 require 'factory_girl_rails'
