@@ -1,5 +1,5 @@
 ```ruby
-IO.popen(["java", "-jar", "tuniu_sign2.jar", TuniuSetting["apiKey"], "message"]).read
+IO.popen(["java", "-jar", "#{Rails.root}/lib/tuniu_sign.jar", TuniuSetting["apiKey"], "message"]).read
 # => "p0jRuOdJEsJ/ohLBu1lbPKJzBqU9f4uFmB4ZEghVDrfKsB5++6cACW8oOJTqtJERsC3Ng2gNHCJdUwD1hWJaxQ==\n"
 ```
 
