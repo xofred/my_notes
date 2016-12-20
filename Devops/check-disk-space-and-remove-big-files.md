@@ -51,3 +51,21 @@ total 75376
 -rw-r--r--  1 MD212  staff   2.3M Nov 30 11:10 test.log
 -rw-r--r--  1 MD212  staff    34M Dec  8 11:25 development.log
 ```
+
+### clear one big log file( such as nginx access.log)
+
+```shell
+truncate -s0 access.log
+```
+
+### find out which folder has most files
+
+```shell
+sudo find . -xdev -type f | cut -d "/" -f 2 | sort | uniq -c | sort -n
+```
+
+Reference: 
+
+[How to Free Inode Usage?](http://stackoverflow.com/questions/653096/how-to-free-inode-usage)
+
+[How do erase the contents of a error.log file but keep the file intact](http://superuser.com/questions/218214/how-do-erase-the-contents-of-a-error-log-file-but-keep-the-file-intact)
