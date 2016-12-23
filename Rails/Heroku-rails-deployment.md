@@ -52,6 +52,15 @@ Delete app
 heroku apps:destroy --appname
 ```
 
-Reference: [Getting Started with Rails 4.x on Heroku](https://devcenter.heroku.com/articles/getting-started-with-rails4)
+To drop the database, if you are using SHARED_DATABASE_URL:
+```shell
+heroku pg:reset DATABASE
+```
 
-Reference: [naaman/delete-heroku-apps.sh](https://gist.github.com/naaman/1384970#file-delete-heroku-apps-sh)
+Reference: 
+
+[Getting Started with Rails 4.x on Heroku](https://devcenter.heroku.com/articles/getting-started-with-rails4)
+
+[naaman/delete-heroku-apps.sh](https://gist.github.com/naaman/1384970#file-delete-heroku-apps-sh)
+
+[How to empty DB in heroku](http://stackoverflow.com/questions/4820549/how-to-empty-db-in-heroku)
