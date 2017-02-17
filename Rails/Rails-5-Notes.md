@@ -24,6 +24,18 @@ end
 
 ---
 
+### Migration with version
+
+Rails 5 has changed migration API because of which even though null: false options is not passed to timestamps when migrations are run then not null is automatically added for timestamps.
+
+Similarly, we want indexes for referenced columns in almost all cases. So Rails 5 does not need references to have index: true. When migrations are run then index is automatically created.
+
+Whenever Rails 5 runs migrations, it checks the class of the current migration file being run. If it’s 5.0, it uses the new migration API which has changes like automatically adding null: false to timestamps.
+
+But whenever the class of migration file is other than ActiveRecord::Migration[5.0], Rails will use a compatibility layer of migrations API. Currently this compatibility layer is present for Rails 4.2. What it means is that all migration generated prior to usage of Rails 5 will be treated as if they were generate in Rails 4.2.
+
+---
+
 ### case_sensitive option in validation
 
 Alright it's not new in Rails 5, but it's new to me. So, let me take some notes.
