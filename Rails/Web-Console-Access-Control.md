@@ -20,4 +20,13 @@ Rails.application.configure do
 end
 ```
 
-Reference: [Web Console](https://github.com/rails/web-console#configweb_consolewhitelisted_ips)
+Or
+
+```ruby
+config.web_console.whiny_requests = false
+```
+
+Reference: 
+
+- [Web Console](https://github.com/rails/web-console#configweb_consolewhitelisted_ips)
+- [Cannot Render Console From Some IP With Rails](https://solidfoundationwebdev.com/blog/posts/cannot-render-console-from-some-ip-with-rails)
