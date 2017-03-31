@@ -64,8 +64,14 @@ truncate -s0 access.log
 sudo find . -xdev -type f | cut -d "/" -f 2 | sort | uniq -c | sort -n
 ```
 
+### [sudo] apt-get autoremove
+
+autoremove is used to remove packages that were automatically installed to satisfy dependencies for other packages and are now no longer needed.
+
 Reference: 
 
 [How to Free Inode Usage?](http://stackoverflow.com/questions/653096/how-to-free-inode-usage)
 
 [How do erase the contents of a error.log file but keep the file intact](http://superuser.com/questions/218214/how-do-erase-the-contents-of-a-error-log-file-but-keep-the-file-intact)
+
+Ubuntu apt-get man page
