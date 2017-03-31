@@ -68,6 +68,8 @@ sudo find . -xdev -type f | cut -d "/" -f 2 | sort | uniq -c | sort -n
 
 autoremove is used to remove packages that were automatically installed to satisfy dependencies for other packages and are now no longer needed.
 
+----
+
 Reference: 
 
 [How to Free Inode Usage?](http://stackoverflow.com/questions/653096/how-to-free-inode-usage)
