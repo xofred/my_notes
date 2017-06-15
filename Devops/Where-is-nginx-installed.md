@@ -1,37 +1,18 @@
-I want to know where nginx is installed.
+For getting the list of all running nginx processes, the ps utility may be used, for example, in the following way:
 ```shell
-which nginx
+ps -ax | grep nginx
 ```
-Nothing comes out.
-
-But I have passenger installed, so I try this.
-```shell
-which passenger
 ```
-
-Now I know where passenger is.
-```
-/home/deploy/.rvm/gems/ruby-2.1.4@danche/bin/passenger
-```
-
-Then I use the passenger command line tool to find nginx.
-```shell
-/home/deploy/.rvm/gems/ruby-2.1.4@danche/bin/passenger-memory-stats
+ 1324 ?        Ss     0:00 nginx: master process /usr/local/nginx/sbin/nginx
+ 1325 ?        S      0:00 nginx: worker process
+ 1326 ?        S      0:00 nginx: worker process
+ 1327 ?        S      0:00 nginx: worker process
+ 1328 ?        S      0:00 nginx: worker process
+ 1329 ?        S      0:00 nginx: worker process
+ 1330 ?        S      0:00 nginx: worker process
+ 1331 ?        S      0:00 nginx: worker process
+ 1332 ?        S      0:00 nginx: worker process
+ 9540 pts/0    S+     0:00 grep --color=auto nginx
 ```
 
-And here comes the nginx.
-```
-Version: 4.0.53
-Date   : 2017-06-14 10:51:15 +0800
-------------- Apache processes -------------
-*** WARNING: The Apache executable cannot be found.
-Please set the APXS2 environment variable to your 'apxs2' executable's filename, or set the HTTPD environment variable to your 'httpd' or 'apache2' executable's filename.
-
-
---------- Nginx processes ---------
-PID   PPID  VMSize   Private  Name
------------------------------------
-1306  1     39.4 MB  ?        nginx: master process /usr/local/nginx/sbin/nginx
-```
-
-Reference: [Installing Passenger + Nginx on a Linux/Unix production server](https://www.phusionpassenger.com/library/walkthroughs/deploy/ruby/ownserver/nginx/oss/trusty/install_passenger.html)
+Reference: [Beginner’s Guide](http://nginx.org/en/docs/beginners_guide.html#control)
