@@ -11,4 +11,6 @@ or
 params.values_at(:p1, :p2, :p3).all?(&:present?)
 ```
 
+or Through Gem [rails_param](https://github.com/nicolasblanco/rails_param)
+
 Reference: [Check Presence of multiple params](https://stackoverflow.com/questions/34766494/check-presence-of-multiple-params)
