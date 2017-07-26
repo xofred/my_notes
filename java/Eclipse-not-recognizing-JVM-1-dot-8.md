@@ -1,0 +1,3 @@
+Visited the Oracle web page noted above: [Java SE Development Kit 8 Downloads](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) I could not find the above reference to 8u73 and 8u74 but I did find and option to download 1.8.0_12. I did this. It installed without difficulty, and then I was able to install Eclipse without difficulty.
+
+Reference: [Eclipse not recognizing JVM 1.8](https://stackoverflow.com/questions/35246910/eclipse-not-recognizing-jvm-1-8)
