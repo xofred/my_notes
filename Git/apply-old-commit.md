@@ -1,4 +1,4 @@
-Said some of your changes from your previous commit accidentally flushed by someone else. And sure you don't want to repeat typing or copy and paste them one by one. Here's the savior!
+Say some of your changes from your previous commit accidentally flushed by someone else. And sure you don't want to repeat typing or copy and paste them one by one. Here's the savior!
 
 1. `git cherry-pick (commit hash you want to apply)`
 
