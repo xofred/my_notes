@@ -1,4 +1,4 @@
-*check*
+### check
 
 The public key.
 ```shell
@@ -10,7 +10,7 @@ This command also works on your known_hosts file, if you want to see a list of y
 ssh-keygen -l -f ~/.ssh/known_hosts
 ```
 
-*generate*
+### generate
 ```shell
 ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 ```
