@@ -18,6 +18,14 @@ gem 'webpacker', '~> 3.0'
 bundle exec rails webpacker:install
 ```
 
+### webpack dev server
+
+In development, other than rails server, we also need a webpack dev server, for live code reloading.
+
+```shell
+./bin/webpack-dev-server
+```
+
 ### view
 
 Include es6 code using `javascript_pack_tag`
