@@ -1,10 +1,20 @@
-String to Time:
+### String to Time:
 
 ```ruby
 DateTime.strptime("2016年07月03日03:30", '%Y年%m月%d日%H:%M') # => Sun, 03 Jul 2016 03:30:00 +0000
 ```
 
-Reference: [Class: DateTime (Ruby 2.3.0) ](http://ruby-doc.org/stdlib-2.3.0/libdoc/date/rdoc/DateTime.html#M000214)
+### DateTime to 13-digit integer(milliseconds)
+
+```ruby
+p DateTime.now.strftime('%Q') # "1384526946523" (milliseconds)
+```
+
+Reference: 
+
+[How to get the current time as 13-digit integer in Ruby?](https://stackoverflow.com/questions/13148888/how-to-get-the-current-time-as-13-digit-integer-in-ruby)
+
+[Class: DateTime (Ruby 2.3.0) ](http://ruby-doc.org/stdlib-2.3.0/libdoc/date/rdoc/DateTime.html#M000214)
 
 ```
 strftime([format='%FT%T%:z']) → string
