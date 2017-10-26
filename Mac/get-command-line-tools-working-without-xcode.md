@@ -12,10 +12,11 @@ xcode-select: error: command line tools are already installed, use "Software Upd
 
 # WTF? R U KIDDING ME APPLE?
 
-Luckily, I googled it and found a [blog](http://railsapps.github.io/xcode-command-line-tools.html). I noticed that the new path to the currently selected directory when `xcode-select -p`
+Luckily, I googled it and found a [blog](http://railsapps.github.io/xcode-command-line-tools.html). I noticed that the new path to the currently selected directory when `xcode-select -p`, is different from mine(/Applications/Xcode.app/Contents/Developer)
 ```
 /Library/Developer/CommandLineTools
 ```
+
 
 So I try:
 ```shell
@@ -23,3 +24,11 @@ sudo xcode-select --switch /Library/Developer/CommandLineTools
 ```
 
 And it worked!
+
+---
+
+Reference:
+
+**[Xcode Command Line Tools · macOS Sierra · Install](http://railsapps.github.io/xcode-command-line-tools.html)**
+
+**xcode-select man page**
