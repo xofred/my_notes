@@ -1,3 +1,5 @@
+Keywords: `dyld: Library not loaded macvim`
+
 ```shell
 brew uninstall macvim && brew install macvim
 ```
