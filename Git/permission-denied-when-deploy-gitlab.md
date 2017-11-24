@@ -2,8 +2,8 @@
 
 checklist
 
-- gitlab privilege
-- add local pub key to remote server 
-- add local pub key to gitlab
-- [set remote url using ssh instead of https](https://help.github.com/articles/changing-a-remote-s-url/)
+- [ADMIN] set gitlab privilege
+- [ADMIN] add developer's pub key to remote server 
+- [DEVELOPER] add developer's pub key to gitlab deploy key
+- [DEVELOPER] [set remote url using ssh instead of https](https://help.github.com/articles/changing-a-remote-s-url/)
 
