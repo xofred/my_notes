@@ -2,6 +2,8 @@
 
 checklist
 
+- add identity to key chain by `ssh-add -K ~/.ssh/id_rsa`
+
 - Admin set gitlab privilegeim
 
 - Admin add developer's pub key to remote server 
