@@ -1,9 +1,10 @@
-### fetch and read
+### write, fetch, and read
 ```ruby
 class Product < ApplicationRecord
   def competing_price
-    # fetch
-    Rails.cache.fetch(price_cache_key, expires_in: 12.hours) do
+    # write will always update cache
+    # fetch won't if cache found
+    Rails.cache.write(price_cache_key, expires_in: 12.hours) do
       Competitor::API.find_price(id)
     end
   end
