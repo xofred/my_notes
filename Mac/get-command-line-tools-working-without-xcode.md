@@ -25,9 +25,17 @@ sudo xcode-select --switch /Library/Developer/CommandLineTools
 
 And it worked!
 
+# Using xcode full version
+
+- install xcode
+
+- `sudo xcode-select -s /Applications/Xcode.app/Contents/Developer`
+
 ---
 
 Reference:
+
+**[xcode-select active developer directory error](https://stackoverflow.com/questions/17980759/xcode-select-active-developer-directory-error)
 
 **[Xcode Command Line Tools · macOS Sierra · Install](http://railsapps.github.io/xcode-command-line-tools.html)**
 
