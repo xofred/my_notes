@@ -37,3 +37,9 @@ after:
     }
   },
 ```
+
+Reference:
+
+[Getter · Vuex](https://vuex.vuejs.org/zh-cn/getters.html)
+
+[计算属性和侦听器 — Vue.js](https://cn.vuejs.org/v2/guide/computed.html)
