@@ -15,4 +15,12 @@ ps -ax | grep nginx
  9540 pts/0    S+     0:00 grep --color=auto nginx
 ```
 
+Go to the directory shown above, e.g, `/usr/local/nginx`, logs should under `logs/`
+
+If not, check `conf/nginx.conf` for `access_log` setting
+```conf
+# nginx conf
+access_log  /data/nginx/logs/access.log  main;
+```
+
 Reference: [Beginner’s Guide](http://nginx.org/en/docs/beginners_guide.html#control)
